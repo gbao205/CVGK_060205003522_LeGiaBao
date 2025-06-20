@@ -1,0 +1,550 @@
+/**
+ * Reset CSS mặc định và sử dụng box-sizing hiện đại
+ * để tính toán kích thước box chính xác hơn
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Thiết lập body sử dụng Flexbox để:
+ * - Đảm bảo footer luôn ở cuối trang
+ * - Chiều cao tối thiểu bằng viewport
+ */
+body {
+  line-height: 1.6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+main {
+  flex: 1; /* Flex-grow để đẩy footer xuống cuối */
+}
+
+/**
+ * Smooth scroll khi click vào anchor links
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Styles chung cho tất cả các section
+ * scroll-margin-top: tạo khoảng cách khi scroll đến section (fix sticky header)
+ * Gradient backgrounds xen kẽ cho các section chẵn/lẻ
+ */
+section {
+  scroll-margin-top: 80px;
+  padding: 4rem 0;
+}
+
+section:nth-of-type(odd) {
+  background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+}
+
+section:nth-of-type(even) {
+  background: linear-gradient(135deg, #e1f5fe 0%, #81d4fa 100%);
+}
+
+/**
+ * Hero Section
+ * - Sử dụng position relative/absolute để xếp lớp nội dung
+ * - z-index để kiểm soát thứ tự hiển thị
+ * - Gradient 3 màu cho background
+ */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 50%, #03a9f4 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+.hero-buttons .btn {
+  padding: 12px 30px;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Stats Grid
+ * - Sử dụng CSS Grid với 2 cột
+ * - Transform và box-shadow cho hiệu ứng hover
+ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/**
+ * Timeline component
+ * - Sử dụng pseudo-element (::before) để tạo đường kẻ dọc
+ * - Position absolute/relative để định vị các marker
+ */
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #007bff;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.5rem;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #007bff;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #007bff;
+}
+
+.timeline-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+}
+
+.timeline-date {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/**
+ * Skill bars
+ * - Sử dụng overflow: hidden để clip gradient
+ * - transition cho hiệu ứng loading
+ * - Linear gradient cho thanh progress
+ */
+.skill-bar {
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border-radius: 5px;
+  transition: width 2s ease-in-out;
+}
+
+/* Education Cards */
+.education-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-right: 1.5rem;
+}
+
+.education-date {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Contact */
+.contact-item {
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+  color: white;
+}
+
+/* Interests Section */
+.interest-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.interest-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.interest-icon {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.interest-item h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.interest-item p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Soft Skills Section */
+.soft-skill-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.soft-skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.soft-skill-icon {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.soft-skill-item:hover .soft-skill-icon {
+  background: #007bff;
+  color: white;
+  transform: scale(1.1);
+}
+
+.soft-skill-item h4 {
+  color: #2c3e50;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.soft-skill-item p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Projects Section Styles */
+.project-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.project-body {
+  margin-bottom: 1.5rem;
+}
+
+.project-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.feature-tag {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.project-footer {
+  text-align: center;
+}
+
+.project-footer .btn {
+  transition: all 0.3s ease;
+}
+
+.project-footer .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    left: 0.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.5rem;
+  }
+
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .education-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+body.dark-mode {
+  background: #191c21 !important;
+  color: #f1f3f5 !important;
+}
+body.dark-mode .bg-light {
+  background: #22262d !important;
+}
+body.dark-mode .text-muted,
+body.dark-mode p,
+body.dark-mode .section-title {
+  color: #e0e3e8 !important;
+}
+body.dark-mode .btn-outline-primary {
+  background: #2d3441 !important;
+  color: #87bfff !important;
+  border-color: #518af3;
+}
+body.dark-mode .btn-outline-primary:hover {
+  background: #518af3 !important;
+  color: #fff !important;
+}
+
+#toggle-soft-skills {
+  transition: all 0.3s;
+}
+#toggle-soft-skills:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #518af355;
+}
+
+#soft-skills-content {
+  transition: max-height 0.5s;
+}
+
+
+.hero-buttons, .hero-content {
+  position: relative;
+  z-index: 10 !important;
+}
+.hero-bg {
+  pointer-events: none;
+}
+
+.modal-content {
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}

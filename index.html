@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- Meta tags cho SEO và responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Lê Gia Bảo</title>
+
+    <!-- External CSS Libraries -->
+    <!-- Bootstrap 5 cho layout và components -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome cho icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts - Poppins cho typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS (Animate On Scroll) cho scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Theme toggle button -->
+    <button id="toggle-theme" class="btn btn-secondary ms-3">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Responsive Navigation Bar -->
+    <!-- fixed-top giữ navbar luôn ở trên cùng khi scroll -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <!-- Brand/logo -->
+        <a class="navbar-brand fw-bold" href="#home">
+          <i class="fas fa-user-circle me-2"></i>Portfolio - Lê Gia Bảo
+        </a>
+        <!-- Hamburger menu cho mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible navigation links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Giới thiệu</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Kỹ năng & Kiến thức
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#experience">Năng lực</a></li>
+                <li><a class="dropdown-item" href="#skills">Kỹ năng chuyên môn</a></li>
+                <li><a class="dropdown-item" href="#soft-skills">Kỹ năng mềm</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Thông tin khác
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown2">
+                <li><a class="dropdown-item" href="#interests">Sở thích</a></li>
+                <li><a class="dropdown-item" href="#education">Học vấn</a></li>
+                <li><a class="dropdown-item" href="#projects">Dự án học tập</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Liên hệ</a>
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- min-height: 100vh để section chiếm full màn hình -->
+    <section id="home" class="hero-section d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Hero content với animation fade-right -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="hero-content">
+              <!-- Phần tiêu đề với hiệu ứng typewriter -->
+              <h1 class="display-4 fw-bold mb-3">
+                Xin chào, tôi là <span class="text-primary">Lê Gia Bảo</span>
+              </h1>
+              <h3 class="text-muted mb-4">
+                <span id="typewriter"></span>
+              </h3>
+
+              <p class="lead mb-4">
+                Tôi là một sinh viên cuối năm 2 với ước mơ trở thành một Senior
+                Test Manager.
+              </p>
+              <!-- CTA buttons với hover effects -->
+              <div class="hero-buttons">
+                <button type="button" class="btn btn-primary btn-lg me-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+    <i class="fas fa-envelope me-2"></i>Liên hệ
+  </button>
+                <a href="CV.pdf" class="btn btn-outline-primary btn-lg" target="_blank" download style="z-index:2; position:relative;">
+                  <i class="fas fa-download me-2"></i> Tải CV
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Hero image với animation fade-left -->
+          <div class="col-lg-6 text-center" data-aos="fade-left">
+            <div class="hero-image">
+              <img
+                src="avt.jpg"
+                alt="Profile"
+                class="img-fluid rounded-circle shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg"></div>
+    </section>
+
+    <!-- About Section -->
+     <section id="about" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Giới thiệu bản thân</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="about-content">
+              <h3 class="mb-4">
+                Sinh viên cuối năm 2 Đại học giao thông vận tải Hồ Chí Minh
+              </h3>
+              <p class="mb-4">
+                Tôi là sinh viên năm 2 ngành Công nghệ Thông tin với niềm đam mê
+                lớn dành cho lập trình và công nghệ. Trong quá trình học tập,
+                tôi luôn chủ động tìm hiểu, nghiên cứu các công nghệ mới, thủ
+                thuật và tips & tricks để nâng cao kỹ năng lập trình. Ngoài việc
+                hoàn thành chương trình học, tôi cũng thường xuyên thử nghiệm
+                các công cụ, framework và tham gia các dự án nhỏ, bài tập lớn
+                nhằm rèn luyện tư duy giải quyết vấn đề và làm việc nhóm. Tôi
+                luôn sẵn sàng học hỏi và không ngừng hoàn thiện bản thân để
+                chuẩn bị tốt nhất cho những thử thách thực tế trong tương lai.
+              </p>
+              <div class="row">
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li><strong>Tuổi:</strong> 20</li>
+                    <li><strong>Địa chỉ:</strong> Hồ Chí Minh</li>
+                    <li><strong>Email:</strong> baolg3522@ut.edu.vn</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li><strong>Điện thoại:</strong> 0846782526</li>
+                    <li><strong>Ngôn ngữ:</strong> Việt, Anh</li>
+                    <li><strong>Freelance:</strong> Có thể</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-left">
+            <div class="row">
+              <div class="col-6 mb-4">
+                <div class="stat-box text-center p-4 bg-light rounded-3 shadow-sm">
+                  <h3 class="display-4 fw-bold text-primary">10+</h3>
+                  <p class="mb-0">Dự án môn học hoàn thành</p>
+                </div>
+              </div>
+              <div class="col-6 mb-4">
+                <div class="stat-box text-center p-4 bg-light rounded-3 shadow-sm">
+                  <h3 class="display-4 fw-bold text-primary">2+</h3>
+                  <p class="mb-0">Năm kinh nghiệm trong quản lý đội nhóm</p>
+                </div>
+              </div>
+              <div class="col-6 mb-4">
+                <div class="stat-box text-center p-4 bg-light rounded-3 shadow-sm">
+                  <h3 class="display-4 fw-bold text-primary">10+</h3>
+                  <p class="mb-0">Giảng viên hài lòng về kết quả đồ án cuối kì</p>
+                </div>
+              </div>
+              <div class="col-6 mb-4">
+                <div class="stat-box text-center p-4 bg-light rounded-3 shadow-sm">
+                  <h3 class="display-4 fw-bold text-primary">100%</h3>
+                  <p class="mb-0">Cam kết đúng tiến độ, đúng yêu cầu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Năng lực & Kiến thức chuyên môn</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="timeline">
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Cơ sở dữ liệu (Database)</h4>
+                  <span class="timeline-date">SQL Server, MySQL, MongoDB</span>
+                  <p>
+                    Nắm vững kiến thức về thiết kế và vận hành hệ quản trị cơ sở
+                    dữ liệu quan hệ và phi quan hệ, tối ưu hóa truy vấn và xử lý
+                    dữ liệu hiệu quả.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Lập trình Web (Web Development)</h4>
+                  <span class="timeline-date">HTML, CSS, JavaScript, PHP</span>
+                  <p>
+                    Xây dựng và phát triển các website cơ bản, sử dụng thành
+                    thạo HTML, CSS, JavaScript, backend cơ bản với PHP/MySQL và
+                    làm quen với các framework hiện đại.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Mạng máy tính (Computer Networks)</h4>
+                  <span class="timeline-date">TCP/IP, Routing, Switching</span>
+                  <p>
+                    Hiểu rõ các mô hình mạng cơ bản, giao thức truyền thông
+                    TCP/IP, phân tích mô hình OSI, các kỹ thuật định tuyến,
+                    chuyển mạch và an ninh mạng cơ bản.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Phân tích & Thiết kế hệ thống</h4>
+                  <span class="timeline-date">UML, ERD, Use Case Diagram</span>
+                  <p>
+                    Ứng dụng mô hình phân tích nghiệp vụ, thiết kế luồng xử lý,
+                    sơ đồ dữ liệu, đảm bảo kiến trúc hệ thống bền vững và dễ bảo
+                    trì.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>An toàn thông tin (Cybersecurity)</h4>
+                  <span class="timeline-date">OWASP, Secure Coding</span>
+                  <p>
+                    Hiểu các nguyên tắc lập trình an toàn, phòng chống tấn công
+                    phổ biến như SQL Injection, XSS, CSRF, và các lỗ hổng bảo
+                    mật trong phát triển ứng dụng web.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Kiểm chứng phần mềm (Software Testing)</h4>
+                  <span class="timeline-date">Unit Test, Integration Test</span>
+                  <p>
+                    Thực hành kiểm thử phần mềm với các kỹ thuật kiểm thử đơn
+                    vị, kiểm thử tích hợp, viết test case và sử dụng công cụ
+                    kiểm thử tự động.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Công nghệ phần mềm (Software Engineering)</h4>
+                  <span class="timeline-date">Agile, Scrum, CI/CD</span>
+                  <p>
+                    Tiếp cận các mô hình phát triển phần mềm hiện đại, quy trình
+                    làm việc nhóm Agile, quản lý phiên bản, vận hành liên tục và
+                    triển khai phần mềm với CI/CD.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- Progress bars với transition animations -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Section header -->
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Kỹ năng chuyên môn</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Technical Skills với progress bars -->
+          <div class="col-lg-6" data-aos="fade-up">
+            <!-- Mỗi skill có progress bar với gradient và animation -->
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>C / C++</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Python</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>HTML / CSS / JavaScript</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Database (MySQL, MongoDB)</span>
+                <span>70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Git / GitHub</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Mạng máy tính / An toàn thông tin</span>
+                <span>65%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <!-- Card grid với hover effects và icon animations -->
+    <section id="soft-skills" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Kỹ năng mềm</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <!-- Mỗi soft skill là một card với icon và hover effect -->
+          <div class="col-md-6 mb-4" data-aos="fade-up">
+            <div class="soft-skill-item">
+              <div class="soft-skill-icon mb-3">
+                <i class="fas fa-comments fa-2x"></i>
+              </div>
+              <h4>Giao tiếp</h4>
+              <p>Khả năng giao tiếp tốt, truyền đạt rõ ràng và hiệu quả.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="soft-skill-item">
+              <div class="soft-skill-icon mb-3">
+                <i class="fas fa-users fa-2x"></i>
+              </div>
+              <h4>Làm việc nhóm</h4>
+              <p>Làm việc nhóm hiệu quả, biết lắng nghe và đóng góp ý kiến.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="soft-skill-item">
+              <div class="soft-skill-icon mb-3">
+                <i class="fas fa-lightbulb fa-2x"></i>
+              </div>
+              <h4>Giải quyết vấn đề</h4>
+              <p>Chủ động và sáng tạo trong việc giải quyết các thách thức.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="soft-skill-item">
+              <div class="soft-skill-icon mb-3">
+                <i class="fas fa-brain fa-2x"></i>
+              </div>
+              <h4>Tư duy logic</h4>
+              <p>Tư duy logic và phản biện trong phân tích vấn đề.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="soft-skill-item">
+              <div class="soft-skill-icon mb-3">
+                <i class="fas fa-clock fa-2x"></i>
+              </div>
+              <h4>Quản lý thời gian</h4>
+              <p>Sắp xếp và quản lý thời gian hiệu quả trong công việc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests Section -->
+    <!-- Card grid với icon animations -->
+    <section id="interests" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Sở thích</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Mỗi interest là một card với icon và hover transform -->
+          <div class="col-md-4 mb-4" data-aos="fade-up">
+            <div class="interest-item text-center">
+              <div class="interest-icon mb-3">
+                <i class="fas fa-code fa-3x"></i>
+              </div>
+              <h4>Công nghệ & Lập trình</h4>
+              <p>
+                Thử nghiệm các công cụ, framework mới và tìm hiểu về các mô hình
+                AI hiện có.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="interest-item text-center">
+              <div class="interest-icon mb-3">
+                <i class="fas fa-headphones-alt fa-3x"></i>
+              </div>
+              <h4>Âm nhạc</h4>
+              <p>
+                Yêu thích nhạc indie, rap và đặc biệt là nhạc của nghệ sĩ J97.
+                Bài hát yêu thích: Sóng gió.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="interest-item text-center">
+              <div class="interest-icon mb-3">
+                <i class="fas fa-gamepad fa-3x"></i>
+              </div>
+              <h4>Games & Thể thao</h4>
+              <p>
+                Thường xuyên chơi Đấu trường chân lý, PUBG và chơi Billard để
+                giải trí.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates & Awards Section -->
+    <section id="certificates" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Chứng chỉ & Giải thưởng</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center" data-aos="fade-up">
+            <div class="certificate-card p-4 bg-white rounded-3 shadow-sm">
+              <i class="fas fa-info-circle text-muted fa-2x mb-3"></i>
+              <h5 class="text-muted mb-0">Không có</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Học vấn & Chứng chỉ</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="education-card">
+              <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="education-content">
+                <h4>Học vấn</h4>
+                <h5 class="text-primary">
+                  Trường Đại học Giao thông Vận tải Thành phố Hồ Chí Minh (UTH)
+                </h5>
+                <span class="education-date">2023 - Hiện tại</span>
+                <p>
+                  Chuyên ngành: Công nghệ thông tin (CN)<br />GPA: 3.43/4.0
+                  (tính đến hiện tại)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="education-card">
+              <div class="education-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="education-content">
+                <h4>Chứng chỉ tự học / khóa học online</h4>
+                <h5 class="text-primary">Udemy, Coursera, Sololearn, v.v.</h5>
+                <span class="education-date">2023 - 2025</span>
+                <p>
+                  Đã hoàn thành nhiều khóa học lập trình C/C++, Python, Web
+                  Development, Git, Database cơ bản.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- Section hiển thị các dự án học tập và bài tập lớn -->
+    <section id="projects" class="py-5">
+      <div class="container">
+        <!-- Section header với animation fade-up -->
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Dự án học tập</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+
+        <!-- Grid hiển thị các project cards -->
+        <div class="row justify-content-center">
+          <!-- Project 1: Course Landing Page -->
+          <div class="col-md-6 mb-4" data-aos="fade-up">
+            <div class="project-card">
+              <div class="project-header">
+                <i class="fas fa-laptop-code project-icon"></i>
+                <h4>Website Khóa học lập trình</h4>
+                <span class="project-tech">HTML5, CSS3, JavaScript, Bootstrap</span>
+              </div>
+              <div class="project-body">
+                <p>
+                  Landing page giới thiệu khóa học lập trình web, được xây dựng với giao diện hiện đại,
+                  responsive và thân thiện với người dùng. Trang web tập trung vào trải nghiệm người dùng
+                  với hiệu ứng mượt mà và tốc độ tải trang nhanh.
+                </p>
+                <div class="project-features">
+                  <span class="feature-tag">Landing Page</span>
+                  <span class="feature-tag">Responsive Design</span>
+                  <span class="feature-tag">Modern UI/UX</span>
+                  <span class="feature-tag">Bootstrap</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a href="https://gbao205.github.io/project_1_tuhoc/" target="_blank" class="btn btn-outline-primary btn-sm me-2">
+                  <i class="fas fa-globe me-2"></i>Demo
+                </a>
+                <a href="https://github.com/gbao205/project_1_tuhoc.git" target="_blank" class="btn btn-outline-primary btn-sm">
+                  <i class="fab fa-github me-2"></i>Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: CV Website -->
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card">
+              <div class="project-header">
+                <i class="fas fa-id-card project-icon"></i>
+                <h4>CV Website</h4>
+                <span class="project-tech">HTML5, CSS3, JavaScript</span>
+              </div>
+              <div class="project-body">
+                <p>
+                  Website CV cá nhân được xây dựng với các công nghệ web hiện
+                  đại, responsive design và các animation đẹp mắt. Sử dụng
+                  Bootstrap 5 cho layout và AOS cho scroll animations.
+                </p>
+                <div class="project-features">
+                  <span class="feature-tag">Responsive Design</span>
+                  <span class="feature-tag">Modern UI</span>
+                  <span class="feature-tag">Animations</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a
+                  href="https://github.com/gbao205"
+                  class="btn btn-outline-primary btn-sm"
+                  target="_blank"
+                >
+                  <i class="fab fa-github me-2"></i>Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: E-Learning Platform -->
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
+              <div class="project-header">
+                <i class="fas fa-graduation-cap project-icon"></i>
+                <h4>E-Learning Platform</h4>
+                <span class="project-tech">HTML, CSS, JavaScript</span>
+              </div>
+              <div class="project-body">
+                <p>
+                  Website mô phỏng nền tảng học trực tuyến, được phát triển như
+                  một phần của khóa học web development. Focus vào trải nghiệm
+                  người dùng và giao diện thân thiện.
+                </p>
+                <div class="project-features">
+                  <span class="feature-tag">UI/UX Design</span>
+                  <span class="feature-tag">Educational</span>
+                  <span class="feature-tag">Interactive</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a href="#" class="btn btn-outline-primary btn-sm disabled">
+                  <i class="fas fa-code me-2"></i>Đang phát triển
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact cards với social links -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Liên hệ với tôi</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="row">
+              <div class="col-md-4 text-center mb-4" data-aos="fade-up">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h5>Email</h5>
+                  <p>baolg3522@ut.edu.vn</p>
+                </div>
+              </div>
+              <div
+                class="col-md-4 text-center mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <h5>Điện thoại</h5>
+                  <p>0846.782.526</p>
+                </div>
+              </div>
+              <div
+                class="col-md-4 text-center mb-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <h5>Địa chỉ</h5>
+                  <p>Hồ Chí Minh, Việt Nam</p>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12 text-center">
+                <div class="social-links" data-aos="fade-up">
+                  <a href="https://github.com/gbao205" class="social-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/legiabao.infor"
+                    class="social-link"
+                  >
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container">
+        <p>&copy; 2025 Lê Gia Bảo. Tất cả quyền được bảo lưu.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <!-- Bootstrap 5 bundle (JS và Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  
+<!-- Modal Form Liên hệ -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="contactModalLabel"><i class="fas fa-paper-plane me-2"></i>Gửi liên hệ nhanh qua Gmail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <form id="contactForm" class="p-3">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên của bạn</label>
+          <input type="text" class="form-control" id="name" placeholder="Nhập tên của bạn" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email của bạn</label>
+          <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Nội dung</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung liên hệ..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Gửi Gmail</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
